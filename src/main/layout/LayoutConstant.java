@@ -1,0 +1,13 @@
+
+package main.layout;
+
+
+public enum LayoutConstant
+{
+	ORIENTATION_VERTICAL,
+	ORIENTATION_HORIZONTAL,
+	ALIGNMENT_MIN,
+	ALIGNMENT_MIDDLE,
+	ALIGNMENT_MAX,
+	ALIGNMENT_NONE
+}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<elements>
+    <element name="root">
+        <elements>
+            <element name="[Element 209]">
+                <elements/>
+                <relations/>
+            </element>
+            <element name="[Element 189]">
+                <elements>
+                    <element name="[Element 190]">
+                        <elements/>
+                        <relations/>
+                    </element>
+                    <element name="[Element 191]">
+                        <elements/>
+                        <relations/>
+                    </element>
+                </elements>
+                <relations/>
+            </element>
+            <element name="[Element 54]">
+                <elements>
+                    <element name="[Element 55]">
+                        <elements/>
+                        <relations/>
+                    </element>
+                    <element name="[Element 56]">
+                        <elements/>
+                        <relations/>
+                    </element>
+                </elements>
+                <relations/>
+            </element>
+            <element name="[Element 192]">
+                <elements>
+                    <element name="[Element 193]">
+                        <elements/>
+                        <relations/>
+                    </element>
+                    <element name="[Element 194]">
+                        <elements/>
+                        <relations/>
+                    </element>
+                </elements>
+                <relations/>
+            </element>
+            <element name="[Element 165]">
+                <elements>
+                    <element name="[Element 166]">
+                        <elements/>
+                        <relations/>
+                    </element>
+                    <element name="[Element 167]">
+                        <elements/>
+                        <relations/>
+                    </element>
+                </elements>
+                <relations/>
+            </element>
+            <element name="[Element 138]">
+                <elements>
+                    <element name="[Element 139]">
+                        <elements/>
+                        <relations/>
+                    </element>
+                    <element name="[Element 140]">
+                        <elements/>
+                        <relations/>
+                    </element>
+                </elements>
+                <relations/>
+            </element>
+        </elements>
+        <relations>
+            <relation type="chain_relation" spacing="5.0"
+                alignment="ALIGNMENT_MIDDLE" orientation="ORIENTATION_HORIZONTAL"/>
+        </relations>
+    </element>
+</elements>
