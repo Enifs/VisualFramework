@@ -33,6 +33,10 @@
             <id>ftp-bonne</id>
             <url>ftp://93.188.162.137/srv/www/hanabiSim</url>
         </repository>
+        <snapshotRepository>
+            <id>ftp-bonne</id>
+            <url>ftp://93.188.162.137/srv/www/hanabiSim</url>
+        </snapshotRepository>
     </distributionManagement>
 
     <build>
