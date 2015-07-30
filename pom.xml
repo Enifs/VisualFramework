@@ -15,9 +15,9 @@
     </properties>
 
     <scm>
-        <connection>scm:git:https://github.com/BONNe/VisualFramework.git</connection>
-        <url>scm:git:https://github.com/BONNe/VisualFramework.git</url>
-        <developerConnection>scm:git:https://github.com/BONNe/VisualFramework.git</developerConnection>
+        <connection>scm:git:https://github.com/Enifs/VisualFramework.git</connection>
+        <url>scm:git:https://github.com/Enifs/VisualFramework.git</url>
+        <developerConnection>scm:git:https://github.com/Enifs/VisualFramework.git</developerConnection>
     </scm>
 
     <dependencies>
