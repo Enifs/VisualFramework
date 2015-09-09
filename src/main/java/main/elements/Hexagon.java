@@ -15,12 +15,50 @@ import java.util.Map;
  */
 public class Hexagon extends Element
 {
+	/**
+	 * Inits Hexagon with given size and default Math.PI / 6 angle.
+	 *
+	 * @param size
+	 */
 	public Hexagon(double size)
 	{
+		this(size, Math.PI / 6);
+	}
+
+
+	/**
+	 * Inits Hexagon with given size and given angle.
+	 *
+	 * @param size
+	 * @param angle
+	 */
+	public Hexagon(double size, double angle)
+	{
+		this(size, angle, Color.WHITE, Color.BLACK, new TextElement(""));
+	}
+
+
+	/**
+	 * This constructor create new Hexagon object with all possible parameters.
+	 *
+	 * @param size Side size
+	 * @param angle Hexagon angle
+	 * @param background Background color
+	 * @param borderColor Border color
+	 * @param text Text element in Hexagon
+	 */
+	public Hexagon(double size, double angle, Color background, Color borderColor, TextElement text)
+	{
+		this.points = new HashMap<>();
+		this.vertexVectors = new HashMap<>();
+		this.neighbourVectors = new HashMap<>();
+
+		this.background = background;
+		this.borderColor = borderColor;
+		this.text = text;
+
 		this.sideDimension = size;
 		this.innerR = this.sin60 * this.sideDimension;
-
-		double angle = Math.PI / 6;
 
 		Vector2D vector = new Vector2D(this.sideDimension, 0);
 		vector = vector.rotate(angle);
@@ -42,15 +80,9 @@ public class Hexagon extends Element
 	}
 
 
-	@Override
-	public Rectangle2D getBounds()
-	{
-		Point2D tl =
-				this.getPosition().minus(
-						new Vector2D(this.sideDimension /2,this.sideDimension /2 ));
-
-		return new Rectangle2D(tl.getX(), tl.getY(), this.sideDimension, this.sideDimension);
-	}
+	// ---------------------------------------------------------------------
+	// Section: Other Methods
+	// ---------------------------------------------------------------------
 
 
 	@Override
@@ -67,6 +99,7 @@ public class Hexagon extends Element
 		g.setColor(oldColor);
 	}
 
+
 	public void buildPolygon()
 	{
 		this.polygon = new Polygon();
@@ -78,6 +111,34 @@ public class Hexagon extends Element
 		}
 	}
 
+
+	// ---------------------------------------------------------------------
+	// Section: Getters
+	// ---------------------------------------------------------------------
+
+
+	@Override
+	public Rectangle2D getBounds()
+	{
+		Point2D tl =
+			this.getPosition().minus(
+				new Vector2D(this.sideDimension /2,this.sideDimension /2 ));
+
+		return new Rectangle2D(tl.getX(), tl.getY(), this.sideDimension, this.sideDimension);
+	}
+
+
+	public Point2D getNeighbourCenter(int direction)
+	{
+		return this.getPosition().plus(this.neighbourVectors.get(direction));
+	}
+
+
+	// ---------------------------------------------------------------------
+	// Section: Setter
+	// ---------------------------------------------------------------------
+
+
 	@Override
 	public void setPosition(Point2D position)
 	{
@@ -86,20 +147,18 @@ public class Hexagon extends Element
 		this.buildPolygon();
 	}
 
-	public Point2D getNeighbourCenter(int direction)
-	{
-		return this.getPosition().plus(this.neighbourVectors.get(direction));
-	}
 
 	public void setText(String text)
 	{
 		this.text.setText(text);
 	}
 
+
 	public void setBorderColor(Color color)
 	{
 		this.borderColor = color;
 	}
+
 
 	public void setBackground(Color background)
 	{
@@ -107,17 +166,35 @@ public class Hexagon extends Element
 	}
 
 
-	double sideDimension;
-	double innerR;
+	// TODO Must recalculate all vertex.
+	public void setSize(double sideDimension)
+	{
+		this.sideDimension = sideDimension;
+	}
 
-	Polygon polygon;
-	double sin60 = Math.sin(Math.PI/3);
-	Map<Integer, Point2D> points = new HashMap<>();
-	Map<Integer, Vector2D> vertexVectors = new HashMap<>();
-	Map<Integer, Vector2D> neighbourVectors = new HashMap<>();
 
-	TextElement text = new TextElement();
+	// ---------------------------------------------------------------------
+	// Section: Variables
+	// ---------------------------------------------------------------------
 
-	Color borderColor = Color.BLACK;
-	Color background = Color.WHITE;
+
+	private double sin60 = Math.sin(Math.PI/3);
+
+	private double sideDimension;
+
+	private double innerR;
+
+	private Polygon polygon;
+
+	private Map<Integer, Point2D> points;
+
+	private Map<Integer, Vector2D> vertexVectors;
+
+	private Map<Integer, Vector2D> neighbourVectors;
+
+	private TextElement text;
+
+	private Color borderColor;
+
+	private Color background;
 }
