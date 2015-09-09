@@ -53,6 +53,7 @@ public class Hexagon extends Element
 		this.vertexVectors = new HashMap<>();
 		this.neighbourVectors = new HashMap<>();
 
+		this.angle = angle;
 		this.background = background;
 		this.borderColor = borderColor;
 		this.text = text;
@@ -61,7 +62,7 @@ public class Hexagon extends Element
 		this.innerR = this.sin60 * this.sideDimension;
 
 		Vector2D vector = new Vector2D(this.sideDimension, 0);
-		vector = vector.rotate(angle);
+		vector = vector.rotate(this.angle);
 
 		Vector2D neighbourVector = new Vector2D(this.innerR*2, 0);
 
@@ -134,6 +135,18 @@ public class Hexagon extends Element
 	}
 
 
+	public double getSideDimension()
+	{
+		return this.sideDimension;
+	}
+
+
+	public double getAngle()
+	{
+		return this.angle;
+	}
+
+
 	// ---------------------------------------------------------------------
 	// Section: Setter
 	// ---------------------------------------------------------------------
@@ -181,6 +194,8 @@ public class Hexagon extends Element
 	private double sin60 = Math.sin(Math.PI/3);
 
 	private double sideDimension;
+
+	private double angle;
 
 	private double innerR;
 
