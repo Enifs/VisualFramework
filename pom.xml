@@ -31,12 +31,12 @@
 
     <distributionManagement>
         <repository>
-            <id>ftp-bonne</id>
-            <url>ftp://93.188.162.137/srv/www/hanabiSim</url>
+            <id>bonne-repo</id>
+            <url>ftp://ftp.bonne.id.lv</url>
         </repository>
         <snapshotRepository>
-            <id>ftp-bonne</id>
-            <url>ftp://93.188.162.137/srv/www/hanabiSim</url>
+            <id>bonne-repo</id>
+            <url>ftp://ftp.bonne.id.lv</url>
         </snapshotRepository>
     </distributionManagement>
 
