@@ -59,8 +59,7 @@ public class PolygonElement extends Element
 	{
 		if (pointList.size() < 3)
 		{
-			// TODO Probably need to create Exceptions?
-			throw new ArrayIndexOutOfBoundsException("Too small pointList");
+			throw new CustomException("Point list is too small. It must contains at least 3 points!");
 		}
 
 		this.pointList = pointList;
@@ -182,6 +181,23 @@ public class PolygonElement extends Element
 	{
 		super.setPosition(position);
 		this.buildPolygon();
+	}
+
+
+// ---------------------------------------------------------------------
+// Section: Private Classes
+// ---------------------------------------------------------------------
+
+
+	/**
+	 * This custom Exception throw message when Polygon point list is too small.
+	 */
+	private class CustomException extends RuntimeException
+	{
+		public CustomException(String message)
+		{
+			super(message, new Throwable(message), true, true);
+		}
 	}
 
 
