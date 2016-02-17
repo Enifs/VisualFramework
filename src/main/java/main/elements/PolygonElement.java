@@ -67,7 +67,9 @@ public class PolygonElement extends Element
 
 		for (Point2D point : this.pointList)
 		{
-			this.polygon.addPoint(point.getAsInt().x, point.getAsInt().y);
+			this.polygon.addPoint(
+				(int) (this.getPosition().x() + point.x()),
+				(int) (this.getPosition().y() + point.y()));
 		}
 	}
 
