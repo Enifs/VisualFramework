@@ -22,6 +22,17 @@ import math.geom2d.polygon.Rectangle2D;
 
 public class PolygonElement extends Element
 {
+	/**
+	 * Default constructor with empty point list.
+	 */
+	protected PolygonElement()
+	{
+		this.pointList = new ArrayList<>();
+		this.borderColor = Color.BLACK;
+		this.backgroundColor = Color.WHITE;
+	}
+
+
 	public PolygonElement(List<Point2D> pointList)
 	{
 		this(pointList, Color.WHITE);
@@ -77,8 +88,8 @@ public class PolygonElement extends Element
 
 
 // ---------------------------------------------------------------------
-// Section: Setters and Getters
-// ---------------------------------------------------------------------
+// Section: Getters
+// --------------------------------------------------------------------
 
 
 	@Override
@@ -90,6 +101,11 @@ public class PolygonElement extends Element
 			this.polygon.getBounds2D().getWidth(),
 			this.polygon.getBounds2D().getHeight());
 	}
+
+
+// ---------------------------------------------------------------------
+// Section: Setters
+// ---------------------------------------------------------------------
 
 
 	public void setBackgroundColor(Color color)
@@ -104,12 +120,20 @@ public class PolygonElement extends Element
 	}
 
 
+	@Override
+	public void setPosition(Point2D position)
+	{
+		super.setPosition(position);
+		this.buildPolygon();
+	}
+
+
 // ---------------------------------------------------------------------
 // Section: Variables
 // ---------------------------------------------------------------------
 
 
-	private List<Point2D> pointList;
+	protected List<Point2D> pointList;
 
 	private Polygon polygon;
 
