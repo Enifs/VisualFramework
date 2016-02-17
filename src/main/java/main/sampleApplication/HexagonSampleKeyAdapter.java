@@ -58,7 +58,7 @@ public class HexagonSampleKeyAdapter extends KeyAdapter
 				this.move(2);
 				break;
 			case KeyEvent.VK_S:
-				this.selectedHexagon.setBackground(sample.gerRandomColor());
+				this.selectedHexagon.setBackgroundColor(sample.gerRandomColor());
 				break;
 		}
 	}
@@ -68,7 +68,7 @@ public class HexagonSampleKeyAdapter extends KeyAdapter
 		Hexagon nextHexagon = manager.addNeighbour(this.selectedHexagon, direction);
 		manager.activate(nextHexagon);
 		this.select(nextHexagon);
-		nextHexagon.setBackground(sample.gerRandomColor());
+		nextHexagon.setBackgroundColor(sample.gerRandomColor());
 	}
 
 	HexagonSample sample;
